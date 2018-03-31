@@ -10,13 +10,22 @@ namespace LinkP6
         static void Main(string[] args)
         {
             string[] names = { "Asif", "Tom", "Jeery", "Merry", "Dick" };
-            IEnumerable<string> query = names.Where(n => n.EndsWith("y"));
+            //IEnumerable<string> query = names.Where(n => n.EndsWith("y"));
 
-            foreach(string name in query)
+            //foreach(string name in query)
+            //{
+            //    Console.WriteLine(name);
+            //    Console.ReadLine();
+            //}
+
+            //query sentax
+            IEnumerable<string> query = from n in names where n.EndsWith("y")select n;
+           foreach(string n in query)
             {
-                Console.WriteLine(name);
+                Console.WriteLine(n);
                 Console.ReadLine();
             }
+
         }
     }
 }
