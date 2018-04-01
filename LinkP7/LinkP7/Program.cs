@@ -24,6 +24,8 @@ namespace LinkP7
             var skipwhilesmall = number1.SkipWhile(n => n < 100);
             Console.WriteLine("TakeWhile Result");
             Console.WriteLine("==================================");
+
+
             foreach (int nm1 in skipwhilesmall)
             {
                 Console.WriteLine(nm1);
