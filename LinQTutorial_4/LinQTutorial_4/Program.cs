@@ -31,15 +31,23 @@ namespace LinQTutorial_4
             IEnumerable<Student> studentQuery =  
                 from student in students
                 where student.Scores[0] > 90 && student.Scores[3]>80
-                orderby student.Last ascending
+                orderby student.Last ascending orderby student.Scores[0] descending
                 select student;
 
 
 
+            //studentQuery2 is an IEnumerable<IGrouping <Char,Student>>
+            var studentQuery2 = from std in students group std by std.Last[0];
+
             // Execute the query. // var could be used here also.
-            foreach (Student student in studentQuery)
+            foreach (var studentgGroup in studentQuery2)
             {
-                Console.WriteLine("{0}, {1}", student.Last, student.First);
+                Console.WriteLine(studentgGroup.Key);
+                foreach(Student student in studentgGroup)
+                {
+                    Console.WriteLine("   {0},{1}",student.Last,student.First);
+                }
+                
             }
             Console.ReadKey();
         }
