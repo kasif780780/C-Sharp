@@ -31,6 +31,7 @@ namespace LinQTutorial_4
             IEnumerable<Student> studentQuery =  
                 from student in students
                 where student.Scores[0] > 90 && student.Scores[3]>80
+                orderby student.Last ascending
                 select student;
 
 
