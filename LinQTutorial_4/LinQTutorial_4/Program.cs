@@ -30,7 +30,7 @@ namespace LinQTutorial_4
             // Create the query. // The first line could also be written as "var studentQuery ="
             IEnumerable<Student> studentQuery =  
                 from student in students
-                where student.Scores[0] > 90
+                where student.Scores[0] > 90 && student.Scores[3]>80
                 select student;
 
 
