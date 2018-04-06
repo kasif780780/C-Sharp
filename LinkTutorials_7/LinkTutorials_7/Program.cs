@@ -17,7 +17,7 @@ namespace LinkTutorials_7
             IEnumerable<string> Query = from word in words orderby word.Length select word;
 
             //Primary Descending
-            IEnumerable<string> Query1 = from word1 in words1 orderby word1.Substring(0, 3) descending select word1;
+            IEnumerable<string> Query1 = from word1 in words1 orderby word1.Length, word1.Substring(0, 3) descending select word1;
             Console.WriteLine("==================Primary Asecending Sorting============");
             foreach(var item in Query)
             {
